@@ -1,0 +1,29 @@
+{
+  "assessed_at": "2026-07-03T18:25:00+02:00",
+  "part": "A",
+  "linux": {
+    "answers": { "A1": "c", "A2": "b", "A3": "d", "A4": "a" },
+    "correct": { "A1": "a", "A2": "b", "A3": "a", "A4": "b" },
+    "score": "1/4",
+    "results": {
+      "A1": false,
+      "A2": true,
+      "A3": false,
+      "A4": false
+    }
+  },
+  "networking": {
+    "answers": { "A1": "c", "A2": "d", "A3": "c", "A4": "b" },
+    "correct": { "A1": "c", "A2": "a", "A3": "c", "A4": "b" },
+    "score": "3/4",
+    "results": {
+      "A1": true,
+      "A2": false,
+      "A3": true,
+      "A4": true
+    },
+    "note": "Parsed Net A2–A3 as d, c from 'dc' in user reply"
+  },
+  "combined_score": "4/8",
+  "combined_percent": 50
+}

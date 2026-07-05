@@ -1,0 +1,48 @@
+track: networking
+description: Networking fundamentals for sysadmin / DevOps career path
+
+topics:
+  - id: net.models
+    title: OSI / TCP-IP mental models
+    prerequisites: []
+    career_tags: [sysadmin, devops, sre]
+
+  - id: net.ip-addressing
+    title: IP addressing, CIDR, subnets
+    prerequisites: [net.models]
+    career_tags: [sysadmin, devops]
+
+  - id: net.interfaces
+    title: Network interfaces and ip/route on Linux
+    prerequisites: [net.ip-addressing, linux.shell-basics]
+    career_tags: [sysadmin, sre]
+
+  - id: net.dns
+    title: DNS resolution and troubleshooting
+    prerequisites: [net.ip-addressing]
+    career_tags: [sysadmin, devops]
+
+  - id: net.tcp-udp
+    title: TCP vs UDP, ports, sockets
+    prerequisites: [net.models, net.ip-addressing]
+    career_tags: [devops, sre]
+
+  - id: net.diagnostics
+    title: ping, traceroute, ss/netstat, curl
+    prerequisites: [net.interfaces, net.tcp-udp]
+    career_tags: [sysadmin, sre]
+
+  - id: net.nat-firewall
+    title: NAT, routing, and firewall basics (iptables/nft)
+    prerequisites: [net.interfaces, net.tcp-udp]
+    career_tags: [sysadmin, security]
+
+  - id: net.http-tls
+    title: HTTP, HTTPS, and TLS handshake concepts
+    prerequisites: [net.tcp-udp, net.dns]
+    career_tags: [devops, sre]
+
+  - id: net.vlan-routing
+    title: VLANs and static routing (intermediate)
+    prerequisites: [net.ip-addressing, net.nat-firewall]
+    career_tags: [sysadmin]

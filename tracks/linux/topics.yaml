@@ -1,0 +1,53 @@
+track: linux
+description: Linux fundamentals for sysadmin / DevOps career path
+
+topics:
+  - id: linux.shell-basics
+    title: Shell navigation & file operations
+    prerequisites: []
+    career_tags: [sysadmin, devops, sre]
+
+  - id: linux.permissions
+    title: Users, groups, and permissions
+    prerequisites: [linux.shell-basics]
+    career_tags: [sysadmin, security]
+
+  - id: linux.processes
+    title: Processes, signals, and job control
+    prerequisites: [linux.shell-basics]
+    career_tags: [sysadmin, sre]
+
+  - id: linux.systemd
+    title: systemd units and service management
+    prerequisites: [linux.processes]
+    career_tags: [sysadmin, devops]
+
+  - id: linux.package-mgmt
+    title: Package management (apt/dpkg)
+    prerequisites: [linux.shell-basics]
+    career_tags: [sysadmin]
+
+  - id: linux.storage
+    title: Disks, partitions, mounts, fstab
+    prerequisites: [linux.shell-basics, linux.permissions]
+    career_tags: [sysadmin]
+
+  - id: linux.logs
+    title: Logs and journald
+    prerequisites: [linux.systemd]
+    career_tags: [sysadmin, sre]
+
+  - id: linux.scripting
+    title: Bash scripting essentials
+    prerequisites: [linux.shell-basics, linux.processes]
+    career_tags: [devops, sre]
+
+  - id: linux.ssh
+    title: SSH, keys, and remote administration
+    prerequisites: [linux.permissions, linux.shell-basics]
+    career_tags: [sysadmin, devops, sre]
+
+  - id: linux.hardening
+    title: Basic hardening and sudo
+    prerequisites: [linux.permissions, linux.ssh]
+    career_tags: [security, sysadmin]

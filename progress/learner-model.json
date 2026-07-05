@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-03T18:36:00+02:00",
+  "profile": {
+    "goal": "career",
+    "target_roles": ["sysadmin", "devops", "sre"],
+    "environment": "native-linux-debian",
+    "session_minutes_target": 30,
+    "session_flexibility": "adapt to topic depth",
+    "difficulty_target": "balanced",
+    "assessment_mix": "learning-science default (varied retrieval)",
+    "topic_order": "placement-driven with interleaving when overlap exists"
+  },
+  "tracks": ["linux", "networking"],
+  "placement": {
+    "status": "complete",
+    "started_at": "2026-07-03T18:25:00+02:00",
+    "completed_at": "2026-07-03T18:36:00+02:00",
+    "part_a_score": "4/8",
+    "overall_score": "6.4/16",
+    "overall_percent": 40,
+    "recommended_start_topics": [
+      "linux.shell-basics",
+      "linux.permissions",
+      "net.ip-addressing",
+      "net.dns"
+    ]
+  },
+  "mastery": {
+    "linux.shell-basics": { "level": 1, "note": "Needs CLI fluency; searching for basic commands" },
+    "linux.permissions": { "level": 1, "note": "Octal chmod weak; scenario reasoning partial" },
+    "linux.processes": { "level": 2, "note": "pstree ok; signal numbers shaky" },
+    "linux.systemd": { "level": 1, "note": "restart vs reload unclear; init.d confusion" },
+    "linux.logs": { "level": 0, "note": "journalctl not yet used" },
+    "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
+    "net.ip-addressing": { "level": 2, "note": "/24 missed; gateway role vague" },
+    "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; not in curl walkthrough" },
+    "net.dns": { "level": 2, "note": "A record ok; resolver vs gateway confused" },
+    "net.diagnostics": { "level": 1, "note": "Correct instincts; no tool/command fluency" },
+    "net.http-tls": { "level": 1, "note": "Web server named; TLS/HTTP steps missing" }
+  },
+  "misconceptions": [
+    { "topic": "linux.permissions", "issue": "Octal chmod: 754 = rwx/r-x/r--" },
+    { "topic": "linux.processes", "issue": "SIGTERM=15, SIGKILL=9" },
+    { "topic": "linux.systemd", "issue": "Units in /etc/systemd/system/; reload ≠ enable-on-boot" },
+    { "topic": "linux.systemd", "issue": "reload applies new config without full stop/start" },
+    { "topic": "linux.shell-basics", "issue": "Hard link = same inode, no cross-filesystem; symlink = pointer path" },
+    { "topic": "net.ip-addressing", "issue": "/24 = 255.255.255.0" },
+    { "topic": "net.dns", "issue": "DNS resolves names→IPs; gateway routes packets to other networks" },
+    { "topic": "linux.permissions", "issue": "Write on file ≠ write on directory; both matter for different ops" }
+  ],
+  "strong_areas": [
+    "net.models",
+    "Problem diagnosis instinct (DNS when IP ping works)"
+  ],
+  "weak_areas": [
+    "linux.shell-basics",
+    "linux.permissions",
+    "linux.systemd",
+    "net.ip-addressing",
+    "net.diagnostics",
+    "CLI command recall without lookup"
+  ],
+  "review_queue": [
+    "linux.permissions",
+    "linux.systemd",
+    "net.ip-addressing",
+    "net.dns",
+    "linux.shell-basics"
+  ],
+  "session_history": [
+    { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
+    { "date": "2026-07-03", "type": "placement", "part": "B-D", "score": "2.4/8" }
+  ],
+  "next_session": {
+    "type": "lecture",
+    "number": 1,
+    "title": "Permissions + CIDR — foundations",
+    "topics": ["linux.permissions", "net.ip-addressing"],
+    "estimated_minutes": 30,
+    "after_lecture": "retrieval quiz on chmod, directory vs file perms, /24 and gateway"
+  }
+}
