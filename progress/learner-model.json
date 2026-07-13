@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-11T17:11:00+02:00",
+  "updated_at": "2026-07-13T15:02:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -27,11 +27,11 @@
     ]
   },
   "mastery": {
-    "linux.shell-basics": { "level": 1, "note": "ss/resolv ok; confused id with ip for UID/group" },
+    "linux.shell-basics": { "level": 2, "note": "id vs ip solid; journalctl/is-enabled syntax still shaky" },
     "linux.permissions": { "level": 2, "note": "Octal recall solid; scenario cause ok; directory w nuance still partial" },
     "linux.processes": { "level": 2, "note": "pstree ok; signal numbers shaky" },
-    "linux.systemd": { "level": 1, "note": "restart vs reload unclear; init.d confusion" },
-    "linux.logs": { "level": 0, "note": "journalctl not yet used" },
+    "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
+    "linux.logs": { "level": 1, "note": "journalctl introduced; -n flag syntax needs practice" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; not in curl walkthrough" },
@@ -41,27 +41,26 @@
   },
   "misconceptions": [
     { "topic": "linux.processes", "issue": "SIGTERM=15, SIGKILL=9" },
-    { "topic": "linux.systemd", "issue": "Units in /etc/systemd/system/; reload ≠ enable-on-boot" },
-    { "topic": "linux.systemd", "issue": "reload applies new config without full stop/start" },
     { "topic": "linux.shell-basics", "issue": "Hard link = same inode, no cross-filesystem; symlink = pointer path" },
-    { "topic": "linux.shell-basics", "issue": "id = user/group identity; ip = interfaces and routes" },
+    { "topic": "linux.logs", "issue": "journalctl -n 5 (not -n -5); systemctl is-enabled (not is-enable)" },
     { "topic": "net.dns", "issue": "DNS resolves names→IPs; gateway routes packets (8.8.8.8 is DNS, not a gateway)" },
     { "topic": "linux.permissions", "issue": "w on directory = create/delete/rename entries; w on file = edit contents" }
   ],
   "strong_areas": [
     "net.models",
     "net.ip-addressing",
+    "linux.systemd",
     "DNS diagnosis instinct and command sequencing"
   ],
   "weak_areas": [
-    "linux.shell-basics",
-    "linux.systemd",
+    "linux.logs",
+    "linux.processes",
     "Gateway vs DNS role separation",
-    "CLI command recall without lookup"
+    "Signal numbers"
   ],
   "review_queue": [
-    "linux.systemd",
-    "linux.shell-basics",
+    "linux.processes",
+    "linux.logs",
     "net.dns",
     "linux.permissions"
   ],
@@ -69,14 +68,15 @@
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
     { "date": "2026-07-03", "type": "placement", "part": "B-D", "score": "2.4/8" },
     { "date": "2026-07-10", "type": "lesson", "number": 1, "score": "5.45/6" },
-    { "date": "2026-07-11", "type": "lesson", "number": 2, "score": "4.8/6" }
+    { "date": "2026-07-11", "type": "lesson", "number": 2, "score": "4.8/6" },
+    { "date": "2026-07-13", "type": "lesson", "number": 3, "score": "5.3/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 3,
-    "title": "systemd services + CLI identity drill",
-    "topics": ["linux.systemd", "linux.shell-basics"],
+    "number": 4,
+    "title": "Processes, signals + journalctl",
+    "topics": ["linux.processes", "linux.logs"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on systemctl start/stop/reload/enable, unit file location, id vs ip"
+    "after_lecture": "retrieval quiz on SIGTERM/SIGKILL, kill/pstree, journalctl -u/-n/-f"
   }
 }
