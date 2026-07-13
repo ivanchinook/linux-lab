@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-13T15:02:00+02:00",
+  "updated_at": "2026-07-13T23:06:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -27,11 +27,11 @@
     ]
   },
   "mastery": {
-    "linux.shell-basics": { "level": 2, "note": "id vs ip solid; journalctl/is-enabled syntax still shaky" },
+    "linux.shell-basics": { "level": 2, "note": "id vs ip solid; journalctl flag syntax still shaky" },
     "linux.permissions": { "level": 2, "note": "Octal recall solid; scenario cause ok; directory w nuance still partial" },
-    "linux.processes": { "level": 2, "note": "pstree ok; signal numbers shaky" },
+    "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
-    "linux.logs": { "level": 1, "note": "journalctl introduced; -n flag syntax needs practice" },
+    "linux.logs": { "level": 2, "note": "journalctl basics ok; -n 10 syntax and unit matching need care" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; not in curl walkthrough" },
@@ -40,9 +40,8 @@
     "net.http-tls": { "level": 1, "note": "Web server named; TLS/HTTP steps missing" }
   },
   "misconceptions": [
-    { "topic": "linux.processes", "issue": "SIGTERM=15, SIGKILL=9" },
     { "topic": "linux.shell-basics", "issue": "Hard link = same inode, no cross-filesystem; symlink = pointer path" },
-    { "topic": "linux.logs", "issue": "journalctl -n 5 (not -n -5); systemctl is-enabled (not is-enable)" },
+    { "topic": "linux.logs", "issue": "journalctl -n 10 (not -10); systemctl is-enabled (not is-enable)" },
     { "topic": "net.dns", "issue": "DNS resolves names→IPs; gateway routes packets (8.8.8.8 is DNS, not a gateway)" },
     { "topic": "linux.permissions", "issue": "w on directory = create/delete/rename entries; w on file = edit contents" }
   ],
@@ -50,33 +49,35 @@
     "net.models",
     "net.ip-addressing",
     "linux.systemd",
+    "linux.processes",
     "DNS diagnosis instinct and command sequencing"
   ],
   "weak_areas": [
     "linux.logs",
-    "linux.processes",
     "Gateway vs DNS role separation",
-    "Signal numbers"
+    "journalctl flag syntax under pressure",
+    "Directory write vs file write nuance"
   ],
   "review_queue": [
-    "linux.processes",
-    "linux.logs",
     "net.dns",
-    "linux.permissions"
+    "linux.permissions",
+    "linux.logs",
+    "linux.shell-basics"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
     { "date": "2026-07-03", "type": "placement", "part": "B-D", "score": "2.4/8" },
     { "date": "2026-07-10", "type": "lesson", "number": 1, "score": "5.45/6" },
     { "date": "2026-07-11", "type": "lesson", "number": 2, "score": "4.8/6" },
-    { "date": "2026-07-13", "type": "lesson", "number": 3, "score": "5.3/6" }
+    { "date": "2026-07-13", "type": "lesson", "number": 3, "score": "5.3/6" },
+    { "date": "2026-07-13", "type": "lesson", "number": 4, "score": "4.7/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 4,
-    "title": "Processes, signals + journalctl",
-    "topics": ["linux.processes", "linux.logs"],
+    "number": 5,
+    "title": "Gateway vs DNS + permissions scenarios",
+    "topics": ["net.dns", "linux.permissions"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on SIGTERM/SIGKILL, kill/pstree, journalctl -u/-n/-f"
+    "after_lecture": "retrieval quiz on resolver vs gateway, chmod scenarios, directory vs file w"
   }
 }
