@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-14T22:09:00+02:00",
+  "updated_at": "2026-07-14T23:35:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -27,20 +27,21 @@
     ]
   },
   "mastery": {
-    "linux.shell-basics": { "level": 2, "note": "id vs ip solid; links not yet covered; journalctl syntax improving" },
-    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid; watch path typos under pressure" },
+    "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; remember ln -s for symlinks" },
+    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid" },
     "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
     "linux.logs": { "level": 2, "note": "journalctl basics ok; -n 10 syntax improving" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
-    "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; not in curl walkthrough" },
+    "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; curl walkthrough next" },
     "net.dns": { "level": 3, "note": "Resolver vs gateway clear; diagnosis flow solid" },
-    "net.diagnostics": { "level": 2, "note": "DNS troubleshoot flow ok; ss/resolv.conf fluent" },
+    "net.diagnostics": { "level": 3, "note": "ping vs curl layering ok; traceroute hostname syntax" },
     "net.http-tls": { "level": 1, "note": "Web server named; TLS/HTTP steps missing" }
   },
   "misconceptions": [
-    { "topic": "linux.shell-basics", "issue": "Hard link = same inode, no cross-filesystem; symlink = pointer path" },
+    { "topic": "linux.shell-basics", "issue": "Symlink: ln -s target linkname (not ln without -s)" },
+    { "topic": "net.diagnostics", "issue": "traceroute example.com (hostname, not https:// URL)" },
     { "topic": "linux.logs", "issue": "journalctl -n 10 (not -10); systemctl is-enabled (not is-enable)" }
   ],
   "strong_areas": [
@@ -49,18 +50,17 @@
     "net.dns",
     "linux.systemd",
     "linux.processes",
-    "linux.permissions"
+    "linux.permissions",
+    "linux.shell-basics"
   ],
   "weak_areas": [
-    "linux.shell-basics",
     "net.http-tls",
-    "Hard/symbolic links",
-    "Path accuracy under pressure"
+    "curl -v full stack walkthrough",
+    "Server-side vs client-side diagnostic commands"
   ],
   "review_queue": [
-    "linux.shell-basics",
     "net.http-tls",
-    "net.diagnostics",
+    "net.tcp-udp",
     "linux.logs"
   ],
   "session_history": [
@@ -70,14 +70,15 @@
     { "date": "2026-07-11", "type": "lesson", "number": 2, "score": "4.8/6" },
     { "date": "2026-07-13", "type": "lesson", "number": 3, "score": "5.3/6" },
     { "date": "2026-07-13", "type": "lesson", "number": 4, "score": "4.7/6" },
-    { "date": "2026-07-14", "type": "lesson", "number": 5, "score": "5.75/6" }
+    { "date": "2026-07-14", "type": "lesson", "number": 5, "score": "5.75/6" },
+    { "date": "2026-07-14", "type": "lesson", "number": 6, "score": "4.8/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 6,
-    "title": "Links + network diagnostics toolbox",
-    "topics": ["linux.shell-basics", "net.diagnostics"],
+    "number": 7,
+    "title": "HTTP/TLS + curl walkthrough",
+    "topics": ["net.http-tls", "net.tcp-udp"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on hard vs symlink, ln -s, curl/ping/traceroute use cases"
+    "after_lecture": "retrieval quiz on curl -v steps, TCP vs UDP, ports, HTTPS handshake outline"
   }
 }
