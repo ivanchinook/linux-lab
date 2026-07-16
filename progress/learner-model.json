@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-14T23:35:00+02:00",
+  "updated_at": "2026-07-16T09:13:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -27,17 +27,17 @@
     ]
   },
   "mastery": {
-    "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; remember ln -s for symlinks" },
+    "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; ln -s for symlinks" },
     "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid" },
     "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
-    "linux.logs": { "level": 2, "note": "journalctl basics ok; -n 10 syntax improving" },
+    "linux.logs": { "level": 2, "note": "journalctl basics ok; filters need practice" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
-    "net.tcp-udp": { "level": 2, "note": "TCP named in MCQ; curl walkthrough next" },
+    "net.tcp-udp": { "level": 3, "note": "TCP vs UDP and port 443 solid" },
     "net.dns": { "level": 3, "note": "Resolver vs gateway clear; diagnosis flow solid" },
-    "net.diagnostics": { "level": 3, "note": "ping vs curl layering ok; traceroute hostname syntax" },
-    "net.http-tls": { "level": 1, "note": "Web server named; TLS/HTTP steps missing" }
+    "net.diagnostics": { "level": 3, "note": "Layered curl/ping/ss diagnosis; client vs server tools clear" },
+    "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" }
   },
   "misconceptions": [
     { "topic": "linux.shell-basics", "issue": "Symlink: ln -s target linkname (not ln without -s)" },
@@ -48,20 +48,21 @@
     "net.models",
     "net.ip-addressing",
     "net.dns",
+    "net.http-tls",
+    "net.diagnostics",
     "linux.systemd",
     "linux.processes",
     "linux.permissions",
     "linux.shell-basics"
   ],
   "weak_areas": [
-    "net.http-tls",
-    "curl -v full stack walkthrough",
-    "Server-side vs client-side diagnostic commands"
+    "linux.logs",
+    "net.interfaces",
+    "journalctl advanced filters"
   ],
   "review_queue": [
-    "net.http-tls",
-    "net.tcp-udp",
-    "linux.logs"
+    "linux.logs",
+    "net.interfaces"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -71,14 +72,15 @@
     { "date": "2026-07-13", "type": "lesson", "number": 3, "score": "5.3/6" },
     { "date": "2026-07-13", "type": "lesson", "number": 4, "score": "4.7/6" },
     { "date": "2026-07-14", "type": "lesson", "number": 5, "score": "5.75/6" },
-    { "date": "2026-07-14", "type": "lesson", "number": 6, "score": "4.8/6" }
+    { "date": "2026-07-14", "type": "lesson", "number": 6, "score": "4.8/6" },
+    { "date": "2026-07-16", "type": "lesson", "number": 7, "score": "6/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 7,
-    "title": "HTTP/TLS + curl walkthrough",
-    "topics": ["net.http-tls", "net.tcp-udp"],
+    "number": 8,
+    "title": "Network interfaces + journalctl mastery",
+    "topics": ["net.interfaces", "linux.logs"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on curl -v steps, TCP vs UDP, ports, HTTPS handshake outline"
+    "after_lecture": "retrieval quiz on ip addr/route, interface up/down, journalctl -u/-p/-b/-f"
   }
 }
