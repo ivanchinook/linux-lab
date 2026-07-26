@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T19:23:00+02:00",
+  "updated_at": "2026-07-26T19:39:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -26,14 +26,21 @@
       "net.dns"
     ]
   },
+  "checkpoint": {
+    "date": "2026-07-26",
+    "lesson": 11,
+    "score": "7.45/8",
+    "percent": 93,
+    "note": "Strong retention across core Linux and networking topics"
+  },
   "mastery": {
     "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; ln -s for symlinks" },
-    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid" },
+    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid — confirmed checkpoint Q8" },
     "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
-    "linux.logs": { "level": 3, "note": "journalctl -f/-b/-u ok; use -p err and match -n count" },
+    "linux.logs": { "level": 3, "note": "Know journalctl not journal; -u/-n/-p err" },
     "linux.ssh": { "level": 3, "note": "Troubleshoot checklist solid; keygen syntax fixed" },
-    "linux.hardening": { "level": 2, "note": "sudo clear; PermitRootLogin vs PasswordAuthentication distinction" },
+    "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear — checkpoint Q7" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.interfaces": { "level": 3, "note": "ip link/addr/route solid for basic troubleshoot" },
@@ -43,34 +50,28 @@
     "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" }
   },
   "misconceptions": [
-    { "topic": "linux.hardening", "issue": "PermitRootLogin no blocks root SSH only — not all SSH; use sudo" },
-    { "topic": "linux.hardening", "issue": "PasswordAuthentication no for keys-only (after keys work)" },
-    { "topic": "linux.ssh", "issue": "authorized_keys spelling (not authorised_keys)" },
+    { "topic": "linux.logs", "issue": "journalctl (not journal) -u ssh -n 10" },
     { "topic": "linux.shell-basics", "issue": "Symlink: ln -s target linkname (not ln without -s)" },
     { "topic": "net.diagnostics", "issue": "traceroute example.com (hostname, not https:// URL)" },
-    { "topic": "linux.logs", "issue": "journalctl -p err (not error); -u UNIT when filtering service logs" }
+    { "topic": "net.interfaces", "issue": "ip route show default for gateway-only output" }
   ],
   "strong_areas": [
-    "net.models",
-    "net.ip-addressing",
-    "net.interfaces",
-    "net.dns",
-    "net.http-tls",
-    "net.diagnostics",
-    "linux.systemd",
-    "linux.processes",
-    "linux.permissions",
-    "linux.shell-basics",
-    "linux.logs",
-    "linux.ssh"
+    "Mid-track checkpoint 93%",
+    "Permissions scenarios (file vs directory)",
+    "DNS diagnosis",
+    "systemd reload vs restart",
+    "sshd_config hardening",
+    "curl layer diagnosis"
   ],
   "weak_areas": [
-    "linux.hardening",
-    "sshd_config setting names and meanings"
+    "linux.package-mgmt",
+    "CLI command name precision (journalctl)",
+    "Topics not yet covered: storage, scripting, firewall"
   ],
   "review_queue": [
-    "linux.hardening",
-    "linux.package-mgmt"
+    "linux.package-mgmt",
+    "linux.storage",
+    "linux.scripting"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -84,14 +85,15 @@
     { "date": "2026-07-16", "type": "lesson", "number": 7, "score": "6/6" },
     { "date": "2026-07-25", "type": "lesson", "number": 8, "score": "5.35/6" },
     { "date": "2026-07-26", "type": "lesson", "number": 9, "score": "4.35/6" },
-    { "date": "2026-07-26", "type": "lesson", "number": 10, "score": "4.4/6" }
+    { "date": "2026-07-26", "type": "lesson", "number": 10, "score": "4.4/6" },
+    { "date": "2026-07-26", "type": "checkpoint", "number": 11, "score": "7.45/8" }
   ],
   "next_session": {
-    "type": "assessment",
-    "number": 11,
-    "title": "Mid-track checkpoint review",
-    "topics": ["mixed"],
+    "type": "lecture",
+    "number": 12,
+    "title": "Package management — apt and dpkg",
+    "topics": ["linux.package-mgmt"],
     "estimated_minutes": 30,
-    "after_lecture": "mixed retrieval across permissions, DNS, systemd, curl, SSH, journalctl"
+    "after_lecture": "retrieval quiz on apt update/upgrade/install/remove, dpkg -l/-L, apt search/show"
   }
 }
