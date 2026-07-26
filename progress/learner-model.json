@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-25T19:56:00+02:00",
+  "updated_at": "2026-07-26T09:49:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -32,6 +32,7 @@
     "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
     "linux.logs": { "level": 3, "note": "journalctl -f/-b/-u ok; use -p err and match -n count" },
+    "linux.ssh": { "level": 2, "note": "700/600 concept ok; authorized_keys is a file; keygen syntax" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.interfaces": { "level": 3, "note": "ip link/addr/route solid for basic troubleshoot" },
@@ -41,6 +42,8 @@
     "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" }
   },
   "misconceptions": [
+    { "topic": "linux.ssh", "issue": "authorized_keys is a file listing public keys (not a folder)" },
+    { "topic": "linux.ssh", "issue": "ssh-keygen -t ed25519 -C \"comment\"" },
     { "topic": "linux.shell-basics", "issue": "Symlink: ln -s target linkname (not ln without -s)" },
     { "topic": "net.diagnostics", "issue": "traceroute example.com (hostname, not https:// URL)" },
     { "topic": "linux.logs", "issue": "journalctl -p err (not error); -u UNIT when filtering service logs" }
@@ -60,11 +63,12 @@
   ],
   "weak_areas": [
     "linux.ssh",
-    "journalctl exact flag syntax under pressure"
+    "SSH troubleshooting checklist",
+    "ssh-keygen command syntax"
   ],
   "review_queue": [
     "linux.ssh",
-    "linux.logs"
+    "linux.hardening"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -76,14 +80,15 @@
     { "date": "2026-07-14", "type": "lesson", "number": 5, "score": "5.75/6" },
     { "date": "2026-07-14", "type": "lesson", "number": 6, "score": "4.8/6" },
     { "date": "2026-07-16", "type": "lesson", "number": 7, "score": "6/6" },
-    { "date": "2026-07-25", "type": "lesson", "number": 8, "score": "5.35/6" }
+    { "date": "2026-07-25", "type": "lesson", "number": 8, "score": "5.35/6" },
+    { "date": "2026-07-26", "type": "lesson", "number": 9, "score": "4.35/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 9,
-    "title": "SSH keys + remote admin basics",
-    "topics": ["linux.ssh"],
+    "number": 10,
+    "title": "SSH troubleshooting + sudo/hardening intro",
+    "topics": ["linux.ssh", "linux.hardening"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on ssh-keygen, authorized_keys, ssh -i, permissions on ~/.ssh"
+    "after_lecture": "retrieval quiz on authorized_keys checklist, ssh-keygen syntax, sudo vs su, PermitRootLogin"
   }
 }
