@@ -1,0 +1,11 @@
+---
+description: Learning project — adaptive tutoring with progress tracking
+alwaysApply: true
+---
+
+# Learning project
+
+- Source of truth: `progress/learner-model.json`
+- Framework docs: `framework/README.md`
+- Session loop: read model → deliver lesson/assessment → score → update model → log session
+- Never skip updating the learner model after a session

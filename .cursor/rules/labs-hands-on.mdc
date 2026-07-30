@@ -1,0 +1,12 @@
+---
+description: Hands-on lab exercises
+globs: "labs/**"
+alwaysApply: false
+---
+
+# Labs
+
+- Labs are artifacts created during exercises — keep them practical and runnable
+- After completing a lab, update `progress/learner-model.json` with mastery changes
+- Include brief notes on what was practiced and any blockers encountered
+- Prefer native hands-on work (CLI, configs) over theory-only writeups

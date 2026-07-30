@@ -1,0 +1,15 @@
+---
+description: Learning session loop for adaptive tutoring
+globs: "progress/**,tracks/**,framework/**"
+alwaysApply: false
+---
+
+# Learning session loop
+
+1. Read `progress/learner-model.json` → check `next_session`
+2. Deliver lesson or assessment (~30 min target, flexible)
+3. Score using `framework/rubrics/scoring.md`
+4. Update mastery levels, `review_queue`, and `next_session` in the learner model
+5. Append a session log under `progress/sessions/` (use `progress/sessions/_template.md` as guide)
+
+Principles: retrieval practice, spaced repetition, varied formats, concrete before abstract.
