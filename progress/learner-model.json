@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T20:48:00+02:00",
+  "updated_at": "2026-07-31T15:54:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -42,6 +42,7 @@
     "linux.ssh": { "level": 3, "note": "Troubleshoot checklist solid; keygen syntax fixed" },
     "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear — checkpoint Q7" },
     "linux.package-mgmt": { "level": 2, "note": "update/upgrade/purge ok; dpkg -l/-s vs apt search; --configure -a" },
+    "linux.storage": { "level": 3, "note": "lsblk/df/mount/fstab/UUID solid; field 1 is device/UUID" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.interfaces": { "level": 3, "note": "ip link/addr/route solid for basic troubleshoot" },
@@ -51,6 +52,7 @@
     "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" }
   },
   "misconceptions": [
+    { "topic": "linux.storage", "issue": "fstab field 1 = device or UUID (not filesystem name)" },
     { "topic": "linux.package-mgmt", "issue": "dpkg -l / dpkg -s = installed; apt search = repo search only" },
     { "topic": "linux.package-mgmt", "issue": "dpkg --configure -a after interrupted install (not dpkg -i)" },
     { "topic": "linux.logs", "issue": "journalctl (not journal) -u ssh -n 10" },
@@ -60,19 +62,19 @@
   ],
   "strong_areas": [
     "Mid-track checkpoint 93%",
-    "apt update vs upgrade",
-    "apt purge vs remove",
-    "dpkg -L and dpkg -S"
+    "Storage: lsblk, mount, fstab, UUID",
+    "Permissions scenarios",
+    "DNS and curl diagnosis"
   ],
   "weak_areas": [
-    "Installed vs repo search commands",
-    "Broken package recovery workflow",
-    "Topics not yet covered: storage, scripting, firewall"
+    "linux.package-mgmt",
+    "linux.scripting",
+    "net.nat-firewall (not yet covered)"
   ],
   "review_queue": [
     "linux.package-mgmt",
-    "linux.storage",
-    "linux.scripting"
+    "linux.scripting",
+    "net.nat-firewall"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -88,14 +90,15 @@
     { "date": "2026-07-26", "type": "lesson", "number": 9, "score": "4.35/6" },
     { "date": "2026-07-26", "type": "lesson", "number": 10, "score": "4.4/6" },
     { "date": "2026-07-26", "type": "checkpoint", "number": 11, "score": "7.45/8" },
-    { "date": "2026-07-26", "type": "lesson", "number": 12, "score": "4.7/6" }
+    { "date": "2026-07-26", "type": "lesson", "number": 12, "score": "4.7/6" },
+    { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 13,
-    "title": "Disks, partitions, mounts, and fstab",
-    "topics": ["linux.storage"],
+    "number": 14,
+    "title": "Bash scripting essentials",
+    "topics": ["linux.scripting"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on lsblk, mount, df -h, /etc/fstab fields, UUID"
+    "after_lecture": "retrieval quiz on variables, $?, if/test, loops, shebang, chmod +x"
   }
 }
