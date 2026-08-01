@@ -1,0 +1,23 @@
+# Lesson 15 — Containers & networking lab stack
+# Usage: docker compose up -d
+# Teardown: docker compose down
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+    networks:
+      - lab
+
+  toolbox:
+    image: nicolaka/netshoot
+    command: sleep infinity
+    networks:
+      - lab
+
+networks:
+  lab:
+    driver: bridge

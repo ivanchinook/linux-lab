@@ -46,3 +46,8 @@ topics:
     title: VLANs and static routing (intermediate)
     prerequisites: [net.ip-addressing, net.nat-firewall]
     career_tags: [sysadmin]
+
+  - id: net.containers
+    title: Container networking (Docker bridge, ports, service DNS)
+    prerequisites: [net.tcp-udp, net.diagnostics, net.interfaces]
+    career_tags: [devops, sre]

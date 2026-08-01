@@ -49,7 +49,8 @@
     "net.tcp-udp": { "level": 3, "note": "TCP vs UDP and port 443 solid" },
     "net.dns": { "level": 3, "note": "Resolver vs gateway clear; diagnosis flow solid" },
     "net.diagnostics": { "level": 3, "note": "Layered curl/ping/ss diagnosis; client vs server tools clear" },
-    "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" }
+    "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" },
+    "net.containers": { "level": 0, "note": "Lesson 15 drafted; lab at labs/lesson-15/" }
   },
   "misconceptions": [
     { "topic": "linux.storage", "issue": "fstab field 1 = device or UUID (not filesystem name)" },
@@ -100,5 +101,14 @@
     "topics": ["linux.scripting"],
     "estimated_minutes": 30,
     "after_lecture": "retrieval quiz on variables, $?, if/test, loops, shebang, chmod +x"
+  },
+  "following_session": {
+    "type": "lecture",
+    "number": 15,
+    "title": "Containers & networking",
+    "topics": ["net.containers", "net.tcp-udp", "net.diagnostics"],
+    "estimated_minutes": 35,
+    "lab_path": "labs/lesson-15/",
+    "after_lecture": "retrieval quiz in labs/lesson-15/LESSON.md part C"
   }
 }
