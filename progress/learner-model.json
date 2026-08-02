@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-31T15:54:00+02:00",
+  "updated_at": "2026-08-02T23:41:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -35,47 +35,44 @@
   },
   "mastery": {
     "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; ln -s for symlinks" },
-    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid — confirmed checkpoint Q8" },
+    "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid" },
     "linux.processes": { "level": 3, "note": "SIGTERM/SIGKILL and kill sequence solid" },
     "linux.systemd": { "level": 3, "note": "restart/reload/start/enable clear; unit paths known" },
-    "linux.logs": { "level": 3, "note": "Know journalctl not journal; -u/-n/-p err" },
+    "linux.logs": { "level": 3, "note": "journalctl -f/-b/-u ok; use -p err" },
     "linux.ssh": { "level": 3, "note": "Troubleshoot checklist solid; keygen syntax fixed" },
-    "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear — checkpoint Q7" },
-    "linux.package-mgmt": { "level": 2, "note": "update/upgrade/purge ok; dpkg -l/-s vs apt search; --configure -a" },
-    "linux.storage": { "level": 3, "note": "lsblk/df/mount/fstab/UUID solid; field 1 is device/UUID" },
+    "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear" },
+    "linux.package-mgmt": { "level": 2, "note": "update/upgrade/purge ok; dpkg -l/-s vs apt search" },
+    "linux.storage": { "level": 3, "note": "lsblk/df/mount/fstab/UUID solid" },
+    "linux.scripting": { "level": 3, "note": "Shebang, $?, if/else, for loops" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
-    "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
-    "net.interfaces": { "level": 3, "note": "ip link/addr/route solid for basic troubleshoot" },
+    "net.ip-addressing": { "level": 3, "note": "/24 and gateway reasoning solid" },
+    "net.interfaces": { "level": 3, "note": "ip link/addr/route solid" },
     "net.tcp-udp": { "level": 3, "note": "TCP vs UDP and port 443 solid" },
     "net.dns": { "level": 3, "note": "Resolver vs gateway clear; diagnosis flow solid" },
     "net.diagnostics": { "level": 3, "note": "Layered curl/ping/ss diagnosis; client vs server tools clear" },
     "net.http-tls": { "level": 4, "note": "curl -v stack and TLS error layering solid" },
-    "net.containers": { "level": 0, "note": "Lesson 15 drafted; lab at labs/lesson-15/" }
+    "net.nat-firewall": { "level": 3, "note": "SNAT/DNAT, INPUT chain, ufw basics" },
+    "net.containers": { "level": 0, "note": "Optional follow-on; lab draft at labs/lesson-15/" }
   },
   "misconceptions": [
-    { "topic": "linux.storage", "issue": "fstab field 1 = device or UUID (not filesystem name)" },
-    { "topic": "linux.package-mgmt", "issue": "dpkg -l / dpkg -s = installed; apt search = repo search only" },
-    { "topic": "linux.package-mgmt", "issue": "dpkg --configure -a after interrupted install (not dpkg -i)" },
-    { "topic": "linux.logs", "issue": "journalctl (not journal) -u ssh -n 10" },
-    { "topic": "linux.shell-basics", "issue": "Symlink: ln -s target linkname (not ln without -s)" },
-    { "topic": "net.diagnostics", "issue": "traceroute example.com (hostname, not https:// URL)" },
-    { "topic": "net.interfaces", "issue": "ip route show default for gateway-only output" }
+    { "topic": "net.nat-firewall", "issue": "REJECT sends ICMP error to sender; DROP is silent" },
+    { "topic": "linux.package-mgmt", "issue": "dpkg -l / dpkg -s = installed; apt search = repo only" },
+    { "topic": "linux.logs", "issue": "journalctl (not journal) -u ssh -n 10" }
   ],
   "strong_areas": [
+    "NAT SNAT/DNAT",
+    "Firewall chains and ufw",
     "Mid-track checkpoint 93%",
-    "Storage: lsblk, mount, fstab, UUID",
-    "Permissions scenarios",
-    "DNS and curl diagnosis"
+    "Full stack: permissions through scripting"
   ],
   "weak_areas": [
-    "linux.package-mgmt",
-    "linux.scripting",
-    "net.nat-firewall (not yet covered)"
+    "linux.package-mgmt (level 2)",
+    "net.vlan-routing (not covered — intermediate)",
+    "net.containers (not yet started)"
   ],
   "review_queue": [
     "linux.package-mgmt",
-    "linux.scripting",
-    "net.nat-firewall"
+    "net.containers"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -92,19 +89,21 @@
     { "date": "2026-07-26", "type": "lesson", "number": 10, "score": "4.4/6" },
     { "date": "2026-07-26", "type": "checkpoint", "number": 11, "score": "7.45/8" },
     { "date": "2026-07-26", "type": "lesson", "number": 12, "score": "4.7/6" },
-    { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" }
+    { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" },
+    { "date": "2026-08-02", "type": "lesson", "number": 14, "score": "6/6" },
+    { "date": "2026-08-02", "type": "lesson", "number": 15, "score": "5.8/6" }
   ],
   "next_session": {
-    "type": "lecture",
-    "number": 14,
-    "title": "Bash scripting essentials",
-    "topics": ["linux.scripting"],
+    "type": "assessment",
+    "number": 16,
+    "title": "End-of-track checkpoint",
+    "topics": ["mixed"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on variables, $?, if/test, loops, shebang, chmod +x"
+    "after_lecture": "mixed retrieval across all topics; harder scenarios"
   },
   "following_session": {
     "type": "lecture",
-    "number": 15,
+    "number": 17,
     "title": "Containers & networking",
     "topics": ["net.containers", "net.tcp-udp", "net.diagnostics"],
     "estimated_minutes": 35,
