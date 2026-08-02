@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-31T15:54:00+02:00",
+  "updated_at": "2026-08-02T23:03:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -43,6 +43,7 @@
     "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear — checkpoint Q7" },
     "linux.package-mgmt": { "level": 2, "note": "update/upgrade/purge ok; dpkg -l/-s vs apt search; --configure -a" },
     "linux.storage": { "level": 3, "note": "lsblk/df/mount/fstab/UUID solid; field 1 is device/UUID" },
+    "linux.scripting": { "level": 3, "note": "Shebang, $?, if/else, for loops, systemctl in scripts" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
     "net.ip-addressing": { "level": 3, "note": "/24 recall solid; gateway vs local subnet reasoning correct" },
     "net.interfaces": { "level": 3, "note": "ip link/addr/route solid for basic troubleshoot" },
@@ -62,18 +63,15 @@
   ],
   "strong_areas": [
     "Mid-track checkpoint 93%",
-    "Storage: lsblk, mount, fstab, UUID",
-    "Permissions scenarios",
-    "DNS and curl diagnosis"
+    "Bash scripting basics",
+    "Storage, permissions, DNS, curl diagnosis"
   ],
   "weak_areas": [
     "linux.package-mgmt",
-    "linux.scripting",
     "net.nat-firewall (not yet covered)"
   ],
   "review_queue": [
     "linux.package-mgmt",
-    "linux.scripting",
     "net.nat-firewall"
   ],
   "session_history": [
@@ -91,14 +89,15 @@
     { "date": "2026-07-26", "type": "lesson", "number": 10, "score": "4.4/6" },
     { "date": "2026-07-26", "type": "checkpoint", "number": 11, "score": "7.45/8" },
     { "date": "2026-07-26", "type": "lesson", "number": 12, "score": "4.7/6" },
-    { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" }
+    { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" },
+    { "date": "2026-08-02", "type": "lesson", "number": 14, "score": "6/6" }
   ],
   "next_session": {
     "type": "lecture",
-    "number": 14,
-    "title": "Bash scripting essentials",
-    "topics": ["linux.scripting"],
+    "number": 15,
+    "title": "NAT, routing, and firewall basics",
+    "topics": ["net.nat-firewall"],
     "estimated_minutes": 30,
-    "after_lecture": "retrieval quiz on variables, $?, if/test, loops, shebang, chmod +x"
+    "after_lecture": "retrieval quiz on iptables/nft concepts, DNAT/SNAT, allow/deny rules"
   }
 }
