@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T00:12:00+02:00",
+  "updated_at": "2026-08-05T09:56:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -41,6 +41,11 @@
       "note": "Core Linux + networking track complete at career-ready baseline"
     }
   },
+  "track_status": {
+    "core": "complete",
+    "extension_containers": "complete",
+    "graduated_at": "2026-08-05"
+  },
   "mastery": {
     "linux.shell-basics": { "level": 3, "note": "Hard vs symlink clear; ln -s for symlinks" },
     "linux.permissions": { "level": 3, "note": "Octal and dir vs file w solid" },
@@ -56,29 +61,26 @@
     "net.ip-addressing": { "level": 3, "note": "/24 and gateway reasoning solid" },
     "net.interfaces": { "level": 3, "note": "ip link/addr/route solid" },
     "net.tcp-udp": { "level": 3, "note": "TCP vs UDP and port 443 solid" },
-    "net.dns": { "level": 3, "note": "Resolver vs gateway clear" },
+    "net.dns": { "level": 3, "note": "Resolver vs gateway clear; container DNS = resolv.conf" },
     "net.diagnostics": { "level": 3, "note": "Layered curl/ping/ss diagnosis" },
     "net.http-tls": { "level": 4, "note": "curl -v stack and TLS layering solid" },
     "net.nat-firewall": { "level": 3, "note": "SNAT/DNAT, INPUT chain, ufw/iptables" },
-    "net.containers": { "level": 0, "note": "Optional follow-on; lab at labs/lesson-15/" }
+    "net.containers": { "level": 3, "note": "Port publish vs container port; Compose service DNS" }
   },
   "misconceptions": [
     { "topic": "linux.package-mgmt", "issue": "dpkg -s = installed status; dpkg -L = list files (requires installed)" },
-    { "topic": "linux.storage", "issue": "Before reboot: mount UUID manually then mount -a" },
-    { "topic": "net.nat-firewall", "issue": "REJECT sends ICMP error; DROP is silent" }
+    { "topic": "net.dns", "issue": "DNS broken → fix resolv.conf/nameserver, not gateway (applies in containers too)" }
   ],
   "strong_areas": [
+    "Container port mapping and service DNS",
     "End-of-track checkpoint 85%",
-    "Permissions, DNS, TLS layering, scripting",
-    "systemd, SSH, NAT/firewall"
+    "Full stack Linux + networking"
   ],
   "weak_areas": [
-    "linux.package-mgmt (dpkg -s vs -L)",
-    "net.containers (optional, not started)"
+    "linux.package-mgmt (level 2 — spaced review only)"
   ],
   "review_queue": [
-    "linux.package-mgmt",
-    "net.containers"
+    "linux.package-mgmt"
   ],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
@@ -98,16 +100,14 @@
     { "date": "2026-07-31", "type": "lesson", "number": 13, "score": "5.75/6" },
     { "date": "2026-08-02", "type": "lesson", "number": 14, "score": "6/6" },
     { "date": "2026-08-02", "type": "lesson", "number": 15, "score": "5.8/6" },
-    { "date": "2026-08-03", "type": "checkpoint", "number": 16, "score": "8.45/10" }
+    { "date": "2026-08-03", "type": "checkpoint", "number": 16, "score": "8.45/10" },
+    { "date": "2026-08-05", "type": "lesson", "number": 17, "score": "5.4/6" }
   ],
   "next_session": {
-    "type": "lecture",
-    "number": 17,
-    "title": "Containers & networking",
-    "topics": ["net.containers", "net.tcp-udp", "net.diagnostics"],
-    "estimated_minutes": 35,
-    "lab_path": "labs/lesson-15/",
-    "after_lecture": "retrieval quiz in labs/lesson-15/LESSON.md part C",
-    "note": "Optional extension — core track complete"
+    "type": "review",
+    "title": "Spaced review — package management drill",
+    "topics": ["linux.package-mgmt"],
+    "estimated_minutes": 15,
+    "note": "Track complete. Use graduation spaced review plan or request mixed quiz."
   }
 }
