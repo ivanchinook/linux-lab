@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-05T09:56:00+02:00",
+  "updated_at": "2026-08-12T14:51:00+02:00",
   "profile": {
     "goal": "career",
     "target_roles": ["sysadmin", "devops", "sre"],
@@ -54,7 +54,7 @@
     "linux.logs": { "level": 3, "note": "journalctl -u/-n/-p err solid" },
     "linux.ssh": { "level": 3, "note": "Publickey troubleshooting solid" },
     "linux.hardening": { "level": 3, "note": "PermitRootLogin vs PasswordAuthentication clear" },
-    "linux.package-mgmt": { "level": 2, "note": "Use dpkg -s to confirm installed; dpkg -L lists files" },
+    "linux.package-mgmt": { "level": 3, "note": "dpkg -s vs -L vs apt search; update/purge solid" },
     "linux.storage": { "level": 3, "note": "fstab + mount -a; manual mount test before reboot" },
     "linux.scripting": { "level": 3, "note": "Shebang, $?, if/else, for loops" },
     "net.models": { "level": 3, "note": "TCP/IP layer model ok" },
@@ -68,20 +68,16 @@
     "net.containers": { "level": 3, "note": "Port publish vs container port; Compose service DNS" }
   },
   "misconceptions": [
-    { "topic": "linux.package-mgmt", "issue": "dpkg -s = installed status; dpkg -L = list files (requires installed)" },
     { "topic": "net.dns", "issue": "DNS broken → fix resolv.conf/nameserver, not gateway (applies in containers too)" }
   ],
   "strong_areas": [
     "Container port mapping and service DNS",
     "End-of-track checkpoint 85%",
-    "Full stack Linux + networking"
+    "Full stack Linux + networking",
+    "Package management (week 1 review 100%)"
   ],
-  "weak_areas": [
-    "linux.package-mgmt (level 2 — spaced review only)"
-  ],
-  "review_queue": [
-    "linux.package-mgmt"
-  ],
+  "weak_areas": [],
+  "review_queue": [],
   "session_history": [
     { "date": "2026-07-03", "type": "placement", "part": "A", "score": "4/8" },
     { "date": "2026-07-03", "type": "placement", "part": "B-D", "score": "2.4/8" },
@@ -101,13 +97,14 @@
     { "date": "2026-08-02", "type": "lesson", "number": 14, "score": "6/6" },
     { "date": "2026-08-02", "type": "lesson", "number": 15, "score": "5.8/6" },
     { "date": "2026-08-03", "type": "checkpoint", "number": 16, "score": "8.45/10" },
-    { "date": "2026-08-05", "type": "lesson", "number": 17, "score": "5.4/6" }
+    { "date": "2026-08-05", "type": "lesson", "number": 17, "score": "5.4/6" },
+    { "date": "2026-08-12", "type": "review", "title": "week-1", "score": "5/5" }
   ],
   "next_session": {
     "type": "review",
-    "title": "Spaced review — package management drill",
-    "topics": ["linux.package-mgmt"],
-    "estimated_minutes": 15,
-    "note": "Track complete. Use graduation spaced review plan or request mixed quiz."
+    "title": "Week 2 spaced review — interleaved scenarios",
+    "topics": ["mixed"],
+    "estimated_minutes": 20,
+    "note": "Service down flow, curl layers, SSH checklist, fstab, bash script. Say 'run week 2 review'."
   }
 }
